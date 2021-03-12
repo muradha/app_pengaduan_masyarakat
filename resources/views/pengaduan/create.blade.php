@@ -15,11 +15,12 @@
                 <td>Masyarkat</td>
                 <td>:</td>
                 <td>
-
-                	
-
-                	<select name="masyarakat_id"></select>
-
+                	<select name="masyarakat_id">
+                		<option> Pilih Masyarakat </option>
+                		@foreach($data as $hasil)
+                		<option value="{{ $hasil->id }}">{{ $hasil->nama }}</option>
+                		@endforeach
+                	</select>
                 </td>
             </tr>
             <tr>

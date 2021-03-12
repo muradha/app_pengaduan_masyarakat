@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pengaduan;
-// use App\Masyarakat;
+use App\Masyarakat;
 
 class PengaduanController extends Controller
 {

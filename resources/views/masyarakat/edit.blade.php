@@ -4,7 +4,7 @@
 
     <form action="{{ url('/masyarakat/save') }}" method="POST">
     {{ csrf_field() }}
-    {{ method_field('POST') }}
+    {{ method_field('PUT') }}
         <table>
             <tr>
                 <td>NIK</td>

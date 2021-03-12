@@ -27,6 +27,7 @@ Route::get('/petugas', 'PetugasController@index');
 Route::get('/petugas/create', 'PetugasController@create');
 Route::post('/petugas/save', 'PetugasController@insert');
 Route::delete('/petugas/delete', 'PetugasController@delete');
+Route::put('/petugas/edit', 'PetugasController@edit');
 
 
 

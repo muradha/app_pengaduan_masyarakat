@@ -1,0 +1,6 @@
+1. Database
+2. Migration Table
+3. Model dan tampil data
+4. Template
+5. CRUD
+copas

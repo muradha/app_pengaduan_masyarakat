@@ -21,8 +21,9 @@ class MasyarakatController extends Controller
         return view('masyarakat.create');
     }
 
-    public function edit(Masyarakat $masyarakat){
-        return view('masyarakat.edit')->with('masyarakat', $masyarakat);
+    public function edit($id){
+        $data_masyarakat = Masyarakat::findOrFail($id);
+        return view('masyarakat.edit', compact($data_masyarakat));
     }
 
     public function insert(Request $request){
