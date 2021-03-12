@@ -32,4 +32,6 @@ Route::delete('/petugas/delete', 'PetugasController@delete');
 
 Route::get('/pengaduan', 'PengaduanController@index');
 Route::get('/pengaduan/create', 'PengaduanController@create');
+Route::post('/pengaduan/save', 'PengaduanController@insert');
+
 Route::get('/tanggapan', 'TanggapanController@index');

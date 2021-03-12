@@ -2,19 +2,25 @@
 
 @section('isi')
 
-    <form action="{{ url('/masyarakat/save') }}" method="POST">
+    <form action="{{ url('/pengaduan/save') }}" method="POST">
     {{ csrf_field() }}
     {{ method_field('POST') }}
         <table>
             <tr>
                 <td>Tanggal Pengaduan</td>
                 <td>:</td>
-                <td><input type="text" name="tgl_pengaduan"></td>
+                <td><input type="date" name="tgl_pengaduan"></td>
             </tr>
             <tr>
                 <td>Masyarkat</td>
                 <td>:</td>
-                <td><input type="text" name="masyarakat_id"></td>
+                <td>
+
+                	
+
+                	<select name="masyarakat_id"></select>
+
+                </td>
             </tr>
             <tr>
                 <td>Isi Laporan</td>

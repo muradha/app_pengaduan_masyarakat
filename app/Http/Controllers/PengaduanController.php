@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pengaduan;
+// use App\Masyarakat;
 
 class PengaduanController extends Controller
 {
@@ -15,6 +16,14 @@ class PengaduanController extends Controller
             ->with('data_pengaduan', $data_pengaduan);
     }
     public function create(){
-    	return view('pengaduan.create');
+    	$data_masyarakat = Masyarakat::get();
+    	return view('pengaduan.create')->with('data', $data_masyarakat);
+    }
+    public function insert(Request $request){
+    	$data_pengaduan = $request->all();
+
+    	Pengaduan::create($data_pengaduan);
+
+    	return redirect('/pengaduan');
     }
 }
