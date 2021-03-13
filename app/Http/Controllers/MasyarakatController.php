@@ -28,11 +28,7 @@ class MasyarakatController extends Controller
     public function create(){
         return view('masyarakat.create');
     }
-
-    public function edit($id){
-        $data = Masyarakat::findOrFail($id);
-        return view('masyarakat.edit')->with('data_masyarakat', $data);
-    }
+    
 
     public function insert(Request $request){
         // ambil data dari form
@@ -43,6 +39,11 @@ class MasyarakatController extends Controller
 
         // kembali ke halaman index
         return redirect('/masyarakat');
+    }
+
+    public function edit($id){
+        $data = Masyarakat::findOrFail($id);
+        return view('masyarakat.edit')->with('data_masyarakat', $data);
     }
 
     public function update(Request $request){

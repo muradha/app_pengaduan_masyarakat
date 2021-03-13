@@ -27,10 +27,25 @@ class PetugasController extends Controller
     }
     
     public function delete(Request $request){
-        $data_masyarakat=Petugas::findOrFail($request->id);
+        $data_petugas=Petugas::findOrFail($request->id);
 
-        $data_masyarakat->delete();
+        $data_petugas->delete();
 
         return redirect('/petugas');
     }
+
+    public function edit($id){
+        $data_petugas = Petugas::findOrFail($id);
+
+        return view('petugas.edit')->with('data_petugas', $data_petugas);
+    }
+
+    public function update(Request $request){
+        $data_petugas = Petugas::findOrFail($request);
+
+        $data_petugas->update($request->all());
+
+        return redirect('/petugas');
+    }
+    
 }
