@@ -1,11 +1,12 @@
-@extends('layouts.main_template');
+@extends('layouts.main_template')
 
 @section('isi')
+
+<a href="{{ url('pengaduan/create')}}"><button>Tambah</button></a>
 
 <table width="600" border="1" cellpadding="5" cellspacing="0">
     <tr>
         <th>No</th>
-        
         <th>Tanggal Pengaduan</th>
       <th>  Masyarkat ID
         </th>

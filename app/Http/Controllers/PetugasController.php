@@ -13,9 +13,11 @@ class PetugasController extends Controller
         return view('petugas/index')
             ->with('data_petugas', $data_petugas);
     }
+
     public function create(){
         return view('petugas.create');
     }
+
     public function insert(Request $request){
         $data_petugas = $request->all();
 
@@ -23,6 +25,7 @@ class PetugasController extends Controller
 
         return redirect('/petugas');
     }
+    
     public function delete(Request $request){
         $data_masyarakat=Petugas::findOrFail($request->id);
 

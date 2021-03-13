@@ -7,14 +7,22 @@ use App\Masyarakat; //model
 
 class MasyarakatController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        $kata_kunci = $request->kata_kunci;
+
         // mengambil data dari table masyarakat
-         $data_masyarakat = Masyarakat::get();
+         $data_masyarakat = Masyarakat::orderBy('nama', 'asc');
+         if($kata_kunci!=""){
+             $data_masyarakat->where('nama', 'like', '%'.$kata_kunci.'%');
+         }
+         $data_masyarakat = $data_masyarakat->get();
         //  dd($data_masyarakat);
 
         //  menampilkan view-nya
         return view('masyarakat/index')
-            ->with('data_masyarakat', $data_masyarakat);
+            ->with('data_masyarakat', $data_masyarakat)
+            ->with('kata_kunci', $kata_kunci);
+
     }
 
     public function create(){
@@ -22,8 +30,8 @@ class MasyarakatController extends Controller
     }
 
     public function edit($id){
-        $data_masyarakat = Masyarakat::findOrFail($id);
-        return view('masyarakat.edit', compact($data_masyarakat));
+        $data = Masyarakat::findOrFail($id);
+        return view('masyarakat.edit')->with('data_masyarakat', $data);
     }
 
     public function insert(Request $request){
@@ -34,6 +42,17 @@ class MasyarakatController extends Controller
         Masyarakat::create($data_masyarakat);
 
         // kembali ke halaman index
+        return redirect('/masyarakat');
+    }
+
+    public function update(Request $request){
+        // mencari data masyarakat sesuai dengan acuan yang dipilih
+        $data=Masyarakat::findOrFail($request->id);
+
+        // edit data
+        $data->update($request->all());
+
+        // kembali ke home
         return redirect('/masyarakat');
     }
 

@@ -2,9 +2,19 @@
 
 @section('isi')
 
-<a href="{{ url('masyarakat/create') }}"><button>Tambah</button></a>
 
-<table width="600" border="1" cellpadding="5" cellspacing="0">
+<div style="margin: 10px;">
+    <a href="{{ url('masyarakat/create') }}"><button>Tambah</button></a>
+
+    <div style="float: right;">
+        <form action="{{ url('/masyarakat') }}" method="get">
+            <input type="text" name="kata_kunci" placeholder="Nama" value="{{ $kata_kunci }}">
+            <button type="submit">Cari</button>
+        </form>
+    </div>
+</div>
+
+<table width="100%" border="1" cellpadding="5" cellspacing="0">
     <tr>
         <th>No</th>
         <th>NIK</th>

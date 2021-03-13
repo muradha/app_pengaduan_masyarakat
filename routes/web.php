@@ -21,14 +21,15 @@ Route::get('/masyarakat/create', 'MasyarakatController@create');
 Route::post('/masyarakat/save', 'MasyarakatController@insert');
 Route::delete('/masyarakat/delete', 'MasyarakatController@delete');
 Route::get('/masyarakat/edit/{id}', 'MasyarakatController@edit');
+Route::put('/masyarakat/update', 'MasyarakatController@update');
 
 
 Route::get('/petugas', 'PetugasController@index');
 Route::get('/petugas/create', 'PetugasController@create');
 Route::post('/petugas/save', 'PetugasController@insert');
 Route::delete('/petugas/delete', 'PetugasController@delete');
-Route::put('/petugas/edit', 'PetugasController@edit');
-
+Route::put('/petugas/edit/{id}', 'PetugasController@edit');
+Route::put('/petugas/update', 'PetugasController@update');
 
 
 Route::get('/pengaduan', 'PengaduanController@index');
