@@ -38,10 +38,10 @@
         <tr>
             <td height="50">
             <a href="/" class="menu ">Beranda</a> |
-            <a href="#" class="menu">Petugas</a> |
+            <a href="{{ url('petugas') }}" class="menu">Petugas</a> |
             <a href="{{ url('masyarakat') }}" class="menu">Masyarakat</a> |
-            <a href="#" class="menu">Pengaduan </a> |
-            <a href="#" class="menu">Tanggapan </a> |
+            <a href="{{ url('pengaduan') }}" class="menu">Pengaduan </a> |
+            <a href="{{ url('tanggapan') }}" class="menu">Tanggapan </a> |
             <a href="#" class="menu">Logout </a> |
             </td>
         </tr>

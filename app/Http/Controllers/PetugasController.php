@@ -7,11 +7,20 @@ use App\Petugas;
 
 class PetugasController extends Controller
 {
-    public function index(){
-        $data_petugas = Petugas::get();
+    public function index(Request $request){
+        $kata_kunci = $request->kata_kunci;
+
+        $data_petugas = Petugas::orderBy('nama', 'asc');
+        
+        if($kata_kunci!=""){
+            $data_petugas->where('nama', 'like', '%'.$kata_kunci.'%');
+        }
+
+        $data_petugas = $data_petugas->get();
 
         return view('petugas/index')
-            ->with('data_petugas', $data_petugas);
+            ->with('data_petugas', $data_petugas)
+            ->with('kata_kunci', $kata_kunci);
     }
 
     public function create(){
@@ -41,11 +50,11 @@ class PetugasController extends Controller
     }
 
     public function update(Request $request){
-        $data_petugas = Petugas::findOrFail($request);
+        $data_petugas = Petugas::findOrFail($request->id);
 
         $data_petugas->update($request->all());
 
         return redirect('/petugas');
     }
-    
+
 }

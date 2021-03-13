@@ -10,6 +10,6 @@ class Pengaduan extends Model
     protected $guarded =['id'];
 
     public function masyarakat(){
-    	return $this->belongsTo(masyarakat::class);
+    	return $this->belongsTo(Masyarakat::class);
     }
 }
