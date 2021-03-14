@@ -37,3 +37,5 @@ Route::get('/pengaduan/create', 'PengaduanController@create');
 Route::post('/pengaduan/save', 'PengaduanController@insert');
 
 Route::get('/tanggapan', 'TanggapanController@index');
+Route::get('/tanggapan/create', 'TanggapanController@create');
+Route::post('/tanggapan/save', 'TanggapanController@insert');

@@ -16,8 +16,8 @@ class PengaduanController extends Controller
             ->with('data_pengaduan', $data_pengaduan);
     }
     public function create(){
-    	$data_masyarakat = Masyarakat::get();
-    	return view('pengaduan.create')->with('data', $data_masyarakat);
+    	$data_pengaduan = Masyarakat::get();
+    	return view('pengaduan.create')->with('data', $data_pengaduan);
     }
     public function insert(Request $request){
     	$data_pengaduan = $request->all();
