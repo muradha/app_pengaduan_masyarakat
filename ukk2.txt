@@ -1,0 +1,6 @@
+1.migration => php artisan make:migration create_masyarakat_table
+2.buat model => php artisan make:model Masyarakat
+3.protected table, guarded =>protected $table=['masyarakat'], $guarded=['id']
+4. membuat controller => php artisan make:controller MasyarakatController
+5. kerjakan menampilkan data => view
+6. panggil model use App\
